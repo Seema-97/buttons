@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .buttons-container {
+        display: flex;
+        gap: 10px;
+        width: 90vw;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 200px;
+      }
+
+      button {
+        width: 100px;
+        height: 35px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .bg-transparent {
+        background: transparent;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="buttons-container">
+      <button class="bg-transparent">1</button>
+      <button class="bg-transparent">2</button>
+      <button class="bg-transparent">3</button>
+      <button class="bg-transparent">4</button>
+      <button class="bg-transparent">5</button>
+      <button class="bg-transparent">6</button>
+      <button class="bg-transparent">7</button>
+      <button class="bg-transparent">8</button>
+      <button class="bg-transparent">9</button>
+      <button class="bg-transparent">10</button>
+    </div>
+
+    <script>
+      let buttons = document.querySelectorAll('button');
+      let buttonContainer = document.querySelector('.buttons-container')
+
+      buttons.forEach((button)=> {
+
+          button.addEventListener('click' , ()=> {
+
+          for(let i=0 ; i < buttons.length ; i++){
+              let button = buttons[i];
+              button.style.backgroundColor = 'transparent'
+          }
+
+          button.style.backgroundColor = 'lightblue'
+
+          setTimeout(function(){
+          buttonContainer.style.backgroundColor = "lightyellow";
+          }, 2000)
+       
+          } )
+    } )
+    </script>
+  </body>
+</html>

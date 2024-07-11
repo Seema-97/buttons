@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .buttons-container {
+        display: flex;
+        gap: 8px;
+        width: 90vw;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 200px;
+      }
+
+      button {
+        width: 100px;
+        height: 35px;
+        background: transparent;
+        border: 1px solid gray;
+        border-radius: 4px;
+        cursor: pointer;
+        color :white;
+        font-size :20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="buttons-container">
+      <button class="btn-1"></button>
+      <button class="btn-2"></button>
+      <button class="btn-3"></button>
+      <button class="btn-4"></button>
+      <button class="btn-5"></button>
+      <button class="btn-6"></button>
+      <button class="btn-7"></button>
+      <button class="btn-8"></button>
+     
+    </div>
+
+    <script>
+      let buttonContainer = document.querySelector(".buttons-container");
+      let buttons = document.querySelectorAll("button");
+
+      buttons.forEach((button) => {
+        // console.log(button);
+        button.addEventListener("click", () => 
+        {
+          // console.log(button);
+
+            buttons.forEach((button) => {
+            button.style.backgroundColor = "transparent";
+            // button.innerText = ''
+            });
+
+            button.style.backgroundColor = "orchid";
+
+            button.innerText = 'clicked'
+         
+            setTimeout(function(){
+              button.innerText =``;
+            //   button.style.backgroundColor = ''
+            },1000)
+        });
+
+      });
+    </script>
+  </body>
+</html>
